@@ -49,7 +49,10 @@ const theme = {
     root: {
       fontFamily: 'body',
       lineHeight: 'body',
-      fontWeight: 'body'
+      fontWeight: 'body',
+      minHeight: '100vh',
+      position: 'relative',
+      pt: '80px'
     },
     h1: {
       color: 'text',
@@ -97,9 +100,12 @@ const theme = {
       lineHeight: 'heading',
       fontWeight: '500',
       fontSize: 2,
-      mb: 3
+      mb: 3,
+      letterSpacing: '0.6px'
     },
     p: {
+      minWidth: '10em',
+      maxWidth: '35em',
       color: 'text',
       fontFamily: 'body',
       fontWeight: 'body',
@@ -149,11 +155,14 @@ const theme = {
       fontWeight: '500',
       fontSize: 1,
       textTransform: 'uppercase',
+      letterSpacing: '0.6px',
       borderRadius: '2px',
       boxShadow: '0 0 3px rgba(0,0,0,0.1)',
+      cursor: 'pointer',
       clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
       transition: 'background 200ms ease-in, color 200ms ease, box-shadow 200ms ease, transform 200ms ease, clip-path 200ms ease',
       '&:hover': {
+        textShadow: '-0.02ex 0 white, 0.02ex 0 white',
         bg: 'tertiary',
         boxShadow: '0 0 8px rgba(0,0,0,0.2)',
         clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
@@ -179,11 +188,14 @@ const theme = {
       fontWeight: '500',
       fontSize: 1,
       textTransform: 'uppercase',
+      letterSpacing: '0.6px',
       borderRadius: '2px',
       boxShadow: '0 0 3px rgba(0,0,0,0.1)',
+      cursor: 'pointer',
       clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
       transition: 'background 200ms ease-in, color 200ms ease, box-shadow 200ms ease, transform 200ms ease, clip-path 200ms ease',
       '&:hover': {
+        textShadow: '-0.02ex 0 white, 0.02ex 0 white',
         bg: 'tertiary',
         boxShadow: '0 0 8px rgba(0,0,0,0.2)',
         clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
@@ -200,10 +212,13 @@ const theme = {
   },
   forms: {
     label: {
+      fontFamily: 'body',
       fontSize: 1,
-      fontWeight: 'bold',
+      fontWeight: '500',
+      mb: 2
     },
     input: {
+      borderRadius: '2px',
       borderColor: 'gray',
       transition: 'box-shadow 200ms ease',
       '&:focus': {
@@ -213,6 +228,8 @@ const theme = {
       },
     },
     select: {
+      fontFamily: 'body',
+      borderRadius: '2px',
       borderColor: 'gray',
       transition: 'box-shadow 200ms ease',
       '&:focus': {
@@ -222,6 +239,7 @@ const theme = {
       },
     },
     textarea: {
+      borderRadius: '2px',
       borderColor: 'gray',
       transition: 'box-shadow 200ms ease',
       resize: 'none',
