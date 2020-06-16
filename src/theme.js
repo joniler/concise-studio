@@ -1,3 +1,5 @@
+import { lighten } from '@theme-ui/color'
+
 const theme = {
   space: [
     0,
@@ -40,7 +42,8 @@ const theme = {
     background: '#fff',
     primary: '#181818',
     secondary: '#CC008A',
-    muted: '#f6f6f6'
+    tertiary: '#4d4d4d',
+    muted: '#f2f2f2'
   },
   styles: {
     root: {
@@ -68,7 +71,7 @@ const theme = {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
+      fontWeight: '700',
       fontSize: 5,
       mb: 3
     },
@@ -76,7 +79,7 @@ const theme = {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
+      fontWeight: '700',
       fontSize: 4,
       mb: 3
     },
@@ -84,7 +87,7 @@ const theme = {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
+      fontWeight: '700',
       fontSize: 3,
       mb: 3
     },
@@ -92,7 +95,7 @@ const theme = {
       color: 'text',
       fontFamily: 'heading',
       lineHeight: 'heading',
-      fontWeight: 'heading',
+      fontWeight: '500',
       fontSize: 2,
       mb: 3
     },
@@ -139,25 +142,98 @@ const theme = {
     primary: {
       mr: 3,
       mb: 3,
+      px: 5,
       color: 'background',
       bg: 'primary',
+      fontFamily: 'heading',
+      fontWeight: '500',
+      fontSize: 1,
+      textTransform: 'uppercase',
       borderRadius: '2px',
-      transition: 'background 200ms ease-in, color 200ms ease',
+      boxShadow: '0 0 3px rgba(0,0,0,0.1)',
+      clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+      transition: 'background 200ms ease-in, color 200ms ease, box-shadow 200ms ease, transform 200ms ease, clip-path 200ms ease',
       '&:hover': {
-        bg: 'muted',
-        color: 'primary'
+        bg: 'tertiary',
+        boxShadow: '0 0 8px rgba(0,0,0,0.2)',
+        clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
+        transform: 'translateY(-1px)'
+      },
+      '&:disabled': {
+        background: lighten('primary', 0.75),
+        '&:hover': {
+          clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+          cursor: 'not-allowed',
+          transform: 'none',
+          boxShadow: 'none'
+        }
       }
     },
     secondary: {
       mr: 3,
       mb: 3,
+      px: 5,
       color: 'background',
       bg: 'secondary',
+      fontFamily: 'heading',
+      fontWeight: '500',
+      fontSize: 1,
+      textTransform: 'uppercase',
       borderRadius: '2px',
-      transition: 'background 200ms ease-in, color 200ms ease',
+      boxShadow: '0 0 3px rgba(0,0,0,0.1)',
+      clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+      transition: 'background 200ms ease-in, color 200ms ease, box-shadow 200ms ease, transform 200ms ease, clip-path 200ms ease',
       '&:hover': {
-        bg: 'text'
+        bg: 'tertiary',
+        boxShadow: '0 0 8px rgba(0,0,0,0.2)',
+        clipPath: 'polygon(0 0, 100% 0%, 100% 100%, 0% 100%)',
+        transform: 'translateY(-1px)'
+      },
+      '&:disabled': {
+        clipPath: 'polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)',
+        background: lighten('primary', 0.75),
+        cursor: 'not-allowed',
+        transform: 'none',
+        boxShadow: 'none'
       }
+    }
+  },
+  forms: {
+    label: {
+      fontSize: 1,
+      fontWeight: 'bold',
+    },
+    input: {
+      borderColor: 'gray',
+      transition: 'box-shadow 200ms ease',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    select: {
+      borderColor: 'gray',
+      transition: 'box-shadow 200ms ease',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    textarea: {
+      borderColor: 'gray',
+      transition: 'box-shadow 200ms ease',
+      resize: 'none',
+      '&:focus': {
+        borderColor: 'primary',
+        boxShadow: t => `0 0 0 2px ${t.colors.primary}`,
+        outline: 'none',
+      },
+    },
+    slider: {
+      bg: 'muted',
+      mb: 4
     },
   }
 }
