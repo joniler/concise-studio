@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div sx={{height: '300vh'}}>
       <Wrap>
-        <Styled.h1 sx={{textTransform: 'uppercase'}}>Concise</Styled.h1>
+        <Styled.h1 sx={{textTransform: 'uppercase'}}>home</Styled.h1>
       </Wrap>
     </div>
   )

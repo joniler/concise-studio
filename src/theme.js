@@ -38,12 +38,21 @@ const theme = {
     heading: 1.125
   },
   colors: {
-    text: '#181818',
+    text: '#211c1d',
     background: '#fff',
-    primary: '#181818',
+    primary: '#211c1d',
     secondary: '#CC008A',
     tertiary: '#4d4d4d',
     muted: '#f2f2f2'
+  },
+  links: {
+    nav: {
+      px: 2,
+      py: 1,
+      textTransform: 'uppercase',
+      letterSpacing: '1px',
+      cursor: 'pointer'
+    }
   },
   styles: {
     root: {
