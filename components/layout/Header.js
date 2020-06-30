@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex, NavLink } from 'theme-ui'
+import { motion } from 'framer-motion'
 import ThemeSwitch from '../buttons/ThemeSwitch.js'
 import VerticalDivider from '../basic/VerticalDivider.js'
 
@@ -11,15 +12,16 @@ export default function Header() {
     left: 0,
     width: '100%',
     height: '80px',
-    p: '8px',
+    py: '8px',
+    px: '24px',
     alignItems: 'center',
     justifyContent: 'space-between',
     bg: 'background',
-    boxShadow: '0 0 80px rgba(0,0,0,0.05)'
+    boxShadow: '0 0 80px rgba(0,0,0,0.05)',
   }
 
   const logoStyles = {
-    width: '66px',
+    width: '36px',
     cursor: 'pointer',
     transition: 'transform 200ms ease',
     '&:hover': {
@@ -31,15 +33,35 @@ export default function Header() {
     alignItems: 'center'
   }
 
+  const headerAnimation = {
+    visible: {
+      width: '100%',
+      position: 'fixed',
+      top: 0,
+      y: 0,
+      zIndex: 100
+    },
+    hidden: {
+      width: '100%',
+      position: 'fixed',
+      top: 0,
+      y: -100,
+      zIndex: 100
+    }
+  }
+
   return(
-    <Flex sx={headerStyles}>
-      <img sx={logoStyles} src="/assets/images/clogo.png" alt="Concise Studio Logo"/>
-      <Flex sx={navStyles}>
-        <NavLink>WORK</NavLink>
-        <NavLink>SERVICES</NavLink>
-        <VerticalDivider height="32px" marginLeft="8px" marginRight="16px"/>
-        <ThemeSwitch/>
+    <motion.div initial="hidden" animate="visible" variants={headerAnimation}>
+      <Flex sx={headerStyles}>
+        <img sx={logoStyles} src="/assets/images/clogo.svg" alt="Concise Studio Logo"/>
+        <Flex sx={navStyles}>
+          <NavLink>WORK</NavLink>
+          <NavLink>SERVICES</NavLink>
+          <NavLink>TEAM</NavLink>
+          <VerticalDivider height="32px" marginLeft="18px" marginRight="24px"/>
+          <ThemeSwitch/>
+        </Flex>
       </Flex>
-    </Flex>
+    </motion.div>
   )
 }

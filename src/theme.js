@@ -39,16 +39,19 @@ const theme = {
   },
   colors: {
     text: '#211c1d',
-    background: '#fff',
+    background: '#fcfcfc',
     primary: '#211c1d',
     secondary: '#CC008A',
     tertiary: '#4d4d4d',
+    darkGrey: '#4d4d4d',
+    midGrey: '#929292',
+    lightGrey: '#c4c4c4',
     muted: '#f2f2f2'
   },
   links: {
     nav: {
       px: 2,
-      py: 1,
+      py: 0,
       textTransform: 'uppercase',
       letterSpacing: '1px',
       cursor: 'pointer'
@@ -69,7 +72,10 @@ const theme = {
       lineHeight: 'heading',
       fontWeight: 'heading',
       fontSize: 7,
-      mb: 3
+      mb: 3,
+      '@media screen and (max-width: 900px)': {
+        fontSize: 6,
+      }
     },
     h2: {
       color: 'text',

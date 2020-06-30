@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui'
 import Wrap from '../components/basic/Wrap'
+import HeroHome from '../components/sections/HeroHome.js'
 
 export default function Home() {
   return (
     <div sx={{height: '300vh'}}>
-      <Wrap>
-        <Styled.h1 sx={{textTransform: 'uppercase'}}>home</Styled.h1>
-      </Wrap>
+      <HeroHome/>
+      <Wrap></Wrap>
     </div>
   )
 }

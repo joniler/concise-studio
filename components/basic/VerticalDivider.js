@@ -13,7 +13,7 @@ export default function VerticalDivider(props) {
       mr: marginRight,
       ml: marginLeft,
       width: '2px',
-      bg: 'primary'
+      bg: 'lightGrey'
     }}>
     </div>
   )
