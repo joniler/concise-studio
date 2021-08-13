@@ -10,7 +10,7 @@
   "dependencies": {
     "@theme-ui/color": "^0.3.1",
     "framer-motion": "^1.11.1",
-    "next": "9.4.4",
+    "next": "11.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "theme-ui": "^0.3.1"
